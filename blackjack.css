@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/brandey');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Brandey Light', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.js-hit-button {
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.js-stand-button {
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.move-icon {
+    height: 250px;
+    margin: 5px;
+}
+
+body {
+    background-color: #151c11;
+}
+
+p {
+    color: white;
+}
+
+#bet-elements {
+    /* position: fixed;
+    top: 40%;
+    width: 100%; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.writing {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.js-bet-question {
+    font-size: 30px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.js-end-result {
+    font-size: 60px;
+}
+
+#input-elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 20px; */
+}
+
+/* #inner-input-elements {
+    display: flex;
+    justify-content: center;
+} */
+
+.js-enter-button {
+    margin-left: 20px;
+    margin-right: 10px;
+    /* height: 30px; */
+    padding: 10px;
+
+
+    background-color: #4285F4;
+    border: transparent;
+    border-radius: 10%;
+}
+
+
+
+
+#draw-piles {
+    display: flex;
+    justify-content: flex-end; 
+    margin: 10px;
+}
+
+.js-net-worth {
+    position: fixed;
+    bottom: 2%;
+    right: 6%;
+    font-size: 20px;
+}
+
+img {
+    height: 180px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#dealer-hand {
+    position: fixed;
+    top: 4%;
+    left: 10%;
+}
+
+#player-hand {
+    position: fixed;
+    bottom: 4%;
+    left: 10%;
+}
+
+#player-hand-label-container {
+    position: fixed;
+    bottom: 12%;
+    left: 2%;
+    width: 5px;
+}
+
+#player-hand-label {
+    color: gray;
+}
+
+#dealer-hand-label {
+    position: fixed;
+    top: 12%;
+    left: 2%;
+    width: 5px;
+    color: gray;
+}
+
+.js-player-score {
+    font-size: 40px;
+}
+
+#leave-icon {
+    height: 40px;
+}
+
+.js-leave-table-button {
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.js-bet-input {
+    /* background-color: #F7931D; */
+    border: transparent;
+}
