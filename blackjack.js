@@ -126,7 +126,7 @@ function displayDealerHand() {
     } else {
         //gets the first key in map
         let img = document.createElement('img');
-        img.src = `/images/cards/${dealer.cards.keys().next().value}.png`
+        img.src = `images/cards/${dealer.cards.keys().next().value}.png`
         console.log(img.src);
         dealerHandElement.appendChild(img);
     }
@@ -140,7 +140,7 @@ function displayHand(person) {
 
     for (const card of person.cards.keys()) {
         let img = document.createElement('img');
-        img.src = `/images/cards/${card}.png`
+        img.src = `images/cards/${card}.png`
         console.log(img.src);
         handElement.appendChild(img);
     }
