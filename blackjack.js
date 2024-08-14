@@ -9,6 +9,8 @@ const standEventListener = () => { onStand(); };
 const leaveTableEventListener = () => { onLeaveTable(); };
 
 
+const playNewHandEventListener = () => { resetElements(); };
+
 document.querySelector('.js-enter-button')
     .addEventListener('click', enterButtonEventListener);
 
@@ -17,6 +19,9 @@ document.querySelector('.js-bet-input')
 
 document.querySelector('.js-leave-table-button')
     .addEventListener('click', leaveTableEventListener);
+
+document.querySelector('.js-play-new-hand-button')
+    .addEventListener('click', playNewHandEventListener);
 
 let cardDeck = new Map();
 
@@ -39,6 +44,8 @@ let dealer = {
     name: 'dealer'
 }
 
+
+resetElements();
 function playRound() {
     clearBetElements();
     dealHand();
@@ -119,7 +126,7 @@ function displayDealerHand() {
     } else {
         //gets the first key in map
         let img = document.createElement('img');
-        img.src = `images/cards/${dealer.cards.keys().next().value}.png`
+        img.src = `/images/cards/${dealer.cards.keys().next().value}.png`
         console.log(img.src);
         dealerHandElement.appendChild(img);
     }
@@ -133,7 +140,7 @@ function displayHand(person) {
 
     for (const card of person.cards.keys()) {
         let img = document.createElement('img');
-        img.src = `images/cards/${card}.png`
+        img.src = `/images/cards/${card}.png`
         console.log(img.src);
         handElement.appendChild(img);
     }
@@ -296,16 +303,23 @@ function endRound (endReason) {
     if (player.coins <= 0) { // if you run out of coins, end game
         setTimeout (function () { clearAllElements() }, 3000);
     }
+    askNewHand(); 
+}
 
-    
-
-    resetElements();
+function askNewHand() {
+    document.querySelector(".js-play-new-hand-button").classList.remove('invisible');
+    document.querySelector(".js-leave-table-button").classList.remove('invisible');
 }
 
 function resetElements() {
+    document.querySelector(".js-end-result").innerHTML="";
+    document.querySelector(".js-play-new-hand-button").classList.add('invisible');
+    document.querySelector(".js-leave-table-button").classList.add('invisible');
+
+
+
     document.querySelector(".js-bet-input").classList.remove('invisible');
     document.querySelector(".js-enter-button").classList.remove('invisible');
-    document.querySelector(".js-leave-table-button").classList.remove('invisible');
     
 
     
@@ -313,11 +327,11 @@ function resetElements() {
     player.cards.clear();
     dealer.cards.clear();
 
-    
+
 
 
     document.querySelector(".js-bet-question")
-        .innerHTML = "How much would you like to bet again?";
+    .innerHTML = "How much would you like to bet this hand?";
 }
 
 function onLeaveTable() {
@@ -333,9 +347,21 @@ function clearAllElements() {
     document.querySelector(".js-end-result")
         .innerHTML = "";
 
+    document.querySelector(".js-dealer-hand-label")
+        .innerHTML = "";
+
+    document.querySelector(".js-player-hand-label")
+        .innerHTML = "";
+
+    document.querySelector(".js-player-score")
+        .innerHTML = "";
+
     document.querySelector(".js-hit-button").classList.add('invisible');
-    
     document.querySelector(".js-stand-button").classList.add('invisible');
+
+
+    document.querySelector(".js-play-new-hand-button").classList.add('invisible');
+
 
     document.querySelector(".js-bet-question")
         .innerHTML = `The table will miss you! You started with 5000 coins, and you leave with ${player.coins} coins.  You made $${(player.coins - 5000)}!`;

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blackjack</title>
+        <link rel="stylesheet" href="blackjack.css">
+        
+    </head>
+    <body>
+        <!-- NOTE: NEED TO ADD: PLAYER POINTS, HELP PAGE -->
+
+        <section id="draw-piles">
+            <button class="js-hit-button"><img src="/images/hit.png" class="move-icon"></button>
+            <button class="js-stand-button"><img src="/images/stand.png" class="move-icon"></button>
+        </section>
+
+        <section id="bet-elements">
+            <p class="js-bet-question writing">Welcome to Blackjack! You walk in with 5000 coins. How much do you want to bet?</p>
+            
+            <div id="input-elements">
+                <!-- <div id="inner-input-elements"> -->
+                    <input placeholder="Bet Value" class="js-bet-input">
+                    <button class="js-enter-button">Enter</button>
+                <!-- </div> -->
+            </div>
+
+            <p class="js-hit-or-stand writing"></p>
+        </section>
+
+        <div id="dealer-hand" class="js-dealer-hand"></div>
+        <div id="player-hand" class="js-player-hand"></div>
+
+        <p class="js-dealer-hand-label">Dealer's Hand:</p>
+
+        <div id="player-hand-label-container">
+            <p class="js-player-hand-label">Your Hand:</p>
+            <p class="js-player-score"></p>
+        </div>
+
+        <div id="new-hand-container">
+            <p class="js-end-result writing"></p>
+            <div id="new-hand-leave-table-container">
+                <button class="js-play-new-hand-button">Play Another Hand?</button>
+                <button class="js-leave-table-button"><img src="/images/leave-icon.png" id="leave-icon"></button>
+            </div>
+        </div>
+
+        
+
+        
+
+
+        <p class="js-net-worth">You have 5000 coins.</p>
+
+
+
+
+        <script src="blackjack.js"> </script>
+    </body>
+</html>
